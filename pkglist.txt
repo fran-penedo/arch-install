@@ -3,6 +3,7 @@ anki
 apache-ant
 astyle
 bash-completion
+catfish
 clang
 cmus
 compton-git
@@ -56,6 +57,7 @@ maven
 mc
 mecab
 mecab-ipadic
+mlocate
 nethogs
 network-manager-applet
 networkmanager
