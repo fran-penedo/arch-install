@@ -1,0 +1,15 @@
+compton-git
+dropbox
+google-chrome
+i3pystatus-git
+libgcrypt15
+mecab
+mecab-ipadic
+pasystray-git
+playerctl
+pypy3-pip
+spotify
+trayer-srg
+ttf-ms-fonts
+vundle-git
+xss-lock
