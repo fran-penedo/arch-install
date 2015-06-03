@@ -13,7 +13,6 @@ dosfstools
 dropbox
 eclipse
 emacs
-evince
 expac
 fcitx-configtool
 fcitx-gtk2
