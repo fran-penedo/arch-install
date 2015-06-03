@@ -1,0 +1,11 @@
+[Unit]
+Description=User resume actions
+After=suspend.target hibernate.target
+
+[Service]
+User=%I
+Type=simple
+ExecStart=/usr/bin/slimlock
+
+[Install]
+WantedBy=suspend.target hibernate.target

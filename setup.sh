@@ -106,3 +106,6 @@ sudo cp 00-keyboard.conf /etc/X11/xorg.conf.d/
 systemctl enable slim.service
 systemctl enable NetworkManager.service
 
+sudo cp resume@.service /etc/systemd/system/
+systemctl enable resume@fran.service
+
