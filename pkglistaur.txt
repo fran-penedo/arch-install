@@ -9,7 +9,7 @@ pasystray-git
 playerctl
 pypy3-pip
 qpdfview
-spotify
+spotify-beta
 trayer-srg
 ttf-ms-fonts
 vundle-git
