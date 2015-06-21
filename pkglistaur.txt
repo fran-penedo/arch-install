@@ -10,7 +10,9 @@ playerctl
 pypy3-pip
 qpdfview
 spotify-beta
+sup
 trayer-srg
 ttf-ms-fonts
 vundle-git
 xss-lock
+zotero

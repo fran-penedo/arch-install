@@ -37,6 +37,7 @@ i3lock
 i3pystatus-git
 i3status
 icedtea-web
+imlib2
 ipython
 kakasi
 lib32-alsa-plugins
@@ -47,6 +48,7 @@ lib32-openal
 lib32-sdl2
 libdvdcss
 libgcrypt15
+libgnome-keyring
 libreoffice-fresh
 libtool
 linux-headers
@@ -57,6 +59,7 @@ mc
 mecab
 mecab-ipadic
 mlocate
+msmtp
 nethogs
 network-manager-applet
 networkmanager
@@ -65,6 +68,7 @@ nitrogen
 nomacs
 notify-osd
 nvidia
+offlineimap
 openal
 openjdk7-doc
 openssh
@@ -85,6 +89,7 @@ python-httplib2
 python-pip
 python-pyqt4
 python2-google-api-python-client
+python2-keyring
 python2-pyopenssl
 qpdfview
 r
@@ -129,6 +134,7 @@ ttf-ms-fonts
 unclutter
 vlc
 vundle-git
+w3m
 weechat
 wine
 wine-mono
@@ -136,6 +142,7 @@ wine_gecko
 winetricks
 wireshark-gtk
 wmctrl
+xclip
 xdotool
 xf86-input-mouse
 xfce4-screenshooter
