@@ -73,7 +73,11 @@ echo Enable wheel group
 read
 visudo
 
+SCRIPTDIR=${pwd}
+
 su fran
+
+cd /home/fran
 
 sudo pacman -S --noconfirm wget
 
@@ -97,12 +101,12 @@ cd ..
 cd ..
 rm -rf install
 
-yaourt -S --noconfirm pkglist.txt
-yaourt -S --noconfirm pkglistaur.txt
+yaourt -S --noconfirm $SCRIPTDIR/pkglist.txt
+yaourt -S --noconfirm $SCRIPTDIR/pkglistaur.txt
 while read i
 do
     sudo pip install $i
-done < pkglistpip.txt
+done < $SCRIIPTDIR/pkglistpip.txt
 
 git clone https://github.com/fran-penedo/dotfiles.git dotfiles
 cd dotfiles
@@ -113,7 +117,7 @@ sudo ln -s /bin/google-chrome-stable /bin/chrome
 
 git clone https://github.com/fran-penedo/oh-my-zsh.git .oh-my-zsh
 
-sudo cp 00-keyboard.conf /etc/X11/xorg.conf.d/
+sudo cp $SCRIPTDIR/00-keyboard.conf /etc/X11/xorg.conf.d/
 
 systemctl enable slim.service
 systemctl enable NetworkManager.service
@@ -121,3 +125,4 @@ systemctl enable NetworkManager.service
 sudo cp resume@.service /etc/systemd/system/
 systemctl enable resume@fran.service
 
+sh $SCRIPTDIR/default.sh
