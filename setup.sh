@@ -1,3 +1,5 @@
+#!/bin/bash -x
+
 #### Installation
 
 # wifi-menu
@@ -39,6 +41,10 @@
 # grub-install --target=i386-pc --recheck /dev/sdx
 # grub-mkconfig -o /boot/grub/grub.cfg
 
+## UEFI (not tested yet)
+
+# grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=grub --recheck
+
 #### Post reboot
 
 vi /etc/locale.gen
@@ -49,8 +55,12 @@ export LANG=en_US.UTF-8
 ln -sf /usr/share/zoneinfo/US/Eastern /etc/localtime
 
 echo fpc > /etc/hostname
+echo Add fpc at the end of all lines
+read
 vi /etc/hosts
 
+echo Enable multilib
+read
 vi /etc/pacman.conf
 
 pacman -Syu
@@ -59,7 +69,9 @@ pacman -S --noconfirm zsh
 useradd -m -G wheel -s /bin/zsh fran
 passwd fran
 
-nano /etc/sudoers
+echo Enable wheel group
+read
+visudo
 
 su fran
 
