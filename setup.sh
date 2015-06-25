@@ -1,5 +1,7 @@
 #!/bin/bash -x
 
+# To be run as ./setup.sh 2>&1 | tee log.txt
+
 #### Installation
 
 # wifi-menu
@@ -75,7 +77,7 @@ visudo
 
 SCRIPTDIR=${pwd}
 
-su fran
+sudo -i -u fran /bin/bash -x - << EOF
 
 cd /home/fran
 
@@ -126,3 +128,5 @@ sudo cp resume@.service /etc/systemd/system/
 systemctl enable resume@fran.service
 
 sh $SCRIPTDIR/default.sh
+
+EOF
