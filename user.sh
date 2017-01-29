@@ -7,14 +7,14 @@ sudo pacman -S --noconfirm wget
 mkdir install
 cd install
 
-wget https://aur.archlinux.org/packages/pa/package-query-git/package-query-git.tar.gz
+wget https://aur.archlinux.org/cgit/aur.git/snapshot/package-query-git.tar.gz
 tar -xvf package-query-git.tar.gz
 cd package-query-git
 makepkg -s --noconfirm
 sudo pacman -U --noconfirm *.tar.xz
 cd ..
 
-wget https://aur.archlinux.org/packages/ya/yaourt-git/yaourt-git.tar.gz
+wget https://aur.archlinux.org/cgit/aur.git/snapshot/yaourt-git.tar.gz
 tar -xvf yaourt-git.tar.gz
 cd yaourt-git
 makepkg -s --noconfirm

@@ -1,5 +1,4 @@
 alsa-utils
-anki
 apache-ant
 astyle
 bash-completion
@@ -52,7 +51,6 @@ linux-headers
 lshw
 lxappearance
 maven
-mc
 mlocate
 mopidy
 mpc
@@ -104,8 +102,6 @@ ranger
 rtorrent
 ruby
 rxvt-unicode
-sagemath
-sagemath-doc
 slim
 steam
 tcl
