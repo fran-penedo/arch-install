@@ -1,4 +1,5 @@
 #!/bin/bash -x
+cd
 
 SCRIPTDIR=/home/fran/arch-install
 
@@ -33,6 +34,8 @@ done < $SCRIPTDIR/pkglistpip.txt
 
 git clone https://github.com/fran-penedo/dotfiles.git dotfiles
 cd dotfiles
+echo "[include]
+	path = ../.gitconfig" >> .git/config
 sh makesymlinks.sh
 cd ..
 
@@ -49,3 +52,9 @@ sudo cp resume@.service /etc/systemd/system/
 systemctl enable resume@fran.service
 
 sh $SCRIPTDIR/default.sh
+
+cd /usr/share/git/credential/gnome-keyring
+sudo make
+cd
+
+
