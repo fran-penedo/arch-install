@@ -2,7 +2,7 @@
 
 SCRIPTDIR=/home/fran/arch-install
 
-sudo pacman -S --noconfirm wget
+sudo pacman -S --noconfirm --needed wget
 
 mkdir install
 cd install
@@ -24,8 +24,8 @@ cd ..
 cd ..
 rm -rf install
 
-yaourt -S $SCRIPTDIR/pkglist.txt
-yaourt -S $SCRIPTDIR/pkglistaur.txt
+yaourt -S --noconfirm --needed $SCRIPTDIR/pkglist.txt
+yaourt -S --noconfirm --needed $SCRIPTDIR/pkglistaur.txt
 while read i
 do
     sudo pip install $i
