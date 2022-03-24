@@ -131,15 +131,18 @@ else
     msg_info "Skipping already installed python packages"
 fi
 
-msg_info "Installing dotfiles"
-git clone https://github.com/fran-penedo/dotfiles.git dotfiles
-cd dotfiles
-chmod +x makesymlinks.sh
-echo "[include]
-	path = ../.gitconfig" >> .git/config
-./makesymlinks.sh
-cd ..
-
+if ! [ -d dotfiles ]; then
+    msg_info "Installing dotfiles"
+    git clone https://github.com/fran-penedo/dotfiles.git dotfiles
+    cd dotfiles
+    chmod +x makesymlinks.sh
+    echo "[include]
+    path = ../.gitconfig" >> .git/config
+    ./makesymlinks.sh
+    cd ..
+else
+    msg_info "Skipping already installed dotfiles"
+fi
 
 if ! [ -d .emacs.d ]; then
     msg_info "Installing spacemacs"
