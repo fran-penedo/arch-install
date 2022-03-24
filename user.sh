@@ -111,17 +111,18 @@ fi
 
 if [ -f repo_installed ]; then
     msg_info "Installing packages from the arch repos..."
-    yay -S --noconfirm --needed $SCRIPTDIR/pkglist.txt && touch repo_installed
+    yay -S --noconfirm --needed - < $SCRIPTDIR/pkglist.txt
+    yay -S --noconfirm --needed --asdeps - < $SCRIPTDIR/optdeplist.txt && touch repo_installed
 else
     msg_info "Skipping already installed packages from arch repos"
 fi
 
-if [ -f aur_installed ]; then
-    msg_info "Installing packages from the aur..."
-    yay -S --noconfirm --needed $SCRIPTDIR/pkglistaur.txt && touch aur_installed
-else
-    msg_info "Skipping already installed packages from aur"
-fi
+# if [ -f aur_installed ]; then
+#     msg_info "Installing packages from the aur..."
+#     yay -S --noconfirm --needed $SCRIPTDIR/pkglistaur.txt && touch aur_installed
+# else
+#     msg_info "Skipping already installed packages from aur"
+# fi
 
 if [ -f pip_installed ]; then
     msg_info "Installing python packages..."
