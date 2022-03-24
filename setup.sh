@@ -20,7 +20,7 @@
 # If GPT use cgdisk, if msdos use cfdisk
 
 # If setting up full disk encryption:
-# cryptsetup -y -v --pbkdf pbkdf2 luksFormat /dev/sda2
+# cryptsetup -y -v --pbkdf pbkdf2 --hash sha256 --iter-time 100 luksFormat /dev/sda2
 # cryptsetup open /dev/sda2 root
 # mkfs.ext4 /dev/mapper/root
 # mount /dev/mapper/root /mnt
@@ -43,8 +43,16 @@
 
 # arch-chroot /mnt /bin/bash
 
-# if encrypted, modify /etc/mkinitcpio.conf
+# if encrypted
+
+# dd bs=512 count=4 if=/dev/random of=/crypto_keyfile.bin iflag=fullblock
+# chmod 600 /crypto_keyfile.bin
+# chmod 600 /boot/initramfs-linux*
+# cryptsetup luksAddKey /dev/sdX# /crypto_keyfile.bin
+
+# modify /etc/mkinitcpio.conf
 # HOOKS=(base udev autodetect keyboard keymap consolefont modconf block encrypt filesystems fsck)
+# FILES=(/crypto_keyfile.bin)
 # mkinitcpio -P
 
 # Set root password with passwd
