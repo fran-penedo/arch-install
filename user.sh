@@ -101,7 +101,7 @@ SCRIPTDIR="${script_dir}"
 if ! command -v yay &> /dev/null
 then
     msg_info "Installing yay..."
-    sudo pacman -S --noconfirm --needed git
+    sudo pacman -S --needed git
     git clone https://aur.archlinux.org/yay.git
     cd yay
     makepkg -si
@@ -111,8 +111,8 @@ fi
 
 if ! [ -f repo_installed ]; then
     msg_info "Installing packages from the arch repos..."
-    yay -S --noconfirm --needed - < $SCRIPTDIR/pkglist.txt
-    yay -S --noconfirm --needed --asdeps - < $SCRIPTDIR/optdeplist.txt && touch repo_installed
+    yay -S --needed - < $SCRIPTDIR/pkglist.txt
+    yay -S --needed --asdeps - < $SCRIPTDIR/optdeplist.txt && touch repo_installed
 else
     msg_info "Skipping already installed packages from arch repos"
 fi
