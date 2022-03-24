@@ -109,7 +109,7 @@ then
     rm -rf yay
 fi
 
-if [ -f repo_installed ]; then
+if ! [ -f repo_installed ]; then
     msg_info "Installing packages from the arch repos..."
     yay -S --noconfirm --needed - < $SCRIPTDIR/pkglist.txt
     yay -S --noconfirm --needed --asdeps - < $SCRIPTDIR/optdeplist.txt && touch repo_installed
@@ -124,7 +124,7 @@ fi
 #     msg_info "Skipping already installed packages from aur"
 # fi
 
-if [ -f pip_installed ]; then
+if ! [ -f pip_installed ]; then
     msg_info "Installing python packages..."
     sudo pip install -r $SCRIPTDIR/pkglistpip.txt && touch pip_installed
 else
