@@ -151,10 +151,10 @@ fi
 
 sudo install -v  $SCRIPTDIR/00-keyboard.conf /etc/X11/xorg.conf.d/
 
-systemctl enable slim.service
+sudo systemctl enable slim.service
 
 sudo install -v $SCRIPTDIR/resume@.service /etc/systemd/system/
-systemctl enable resume@fran.service
+sudo systemctl enable resume@fran.service
 
 cd /usr/share/git/credential/gnome-keyring
 sudo make
