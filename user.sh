@@ -48,8 +48,8 @@ die() {
 
 parse_params() {
     # default values of variables set from params
-    flag=0
-    param=''
+    # flag=0
+    # param=''
 
     while :; do
         case "${1-}" in
@@ -70,8 +70,8 @@ parse_params() {
     args=("$@")
 
     # check required params and arguments
-    [[ -z "${param-}" ]] && die "Missing required parameter: param"
-    [[ ${#args[@]} -eq 0 ]] && die "Missing script arguments"
+    # [[ -z "${param-}" ]] && die "Missing required parameter: param"
+    # [[ ${#args[@]} -eq 0 ]] && die "Missing script arguments"
 
     return 0
 }
